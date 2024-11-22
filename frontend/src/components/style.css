@@ -115,3 +115,26 @@ body{
 .nav-container{
   margin-left: 40px;
 }
+
+/* RoomDetail */
+.room-detail {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+}
+
+.room-detail h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.room-detail p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.room-detail img {
+  width: 100%;
+  height: auto;
+}

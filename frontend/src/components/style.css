@@ -138,3 +138,41 @@ body{
   width: 100%;
   height: auto;
 }
+
+/* Payment*/
+.payment-detail {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+}
+
+.payment-detail h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.payment-detail label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.payment-detail input {
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.payment-detail button {
+  font-size: 16px;
+  padding: 10px 15px;
+  background-color: #114342; 
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.payment-detail button:hover {
+  background-color: #1fb0b6; 
+}

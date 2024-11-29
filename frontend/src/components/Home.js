@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
 import Navbar from '../components/Navbar';
+import Footer from './Footer';
+import './style.css'; 
 
 const Home = () => {
   return (
-    <div>
+    <div className="page-container">
       <Navbar />
+      <main className="content">
+        {/* Add main content here */}
+        <h1>Welcome to Serenity Hotel</h1>
+        <p>Your gateway to luxury and relaxation.</p>
+      </main>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

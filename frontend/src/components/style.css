@@ -21,7 +21,7 @@ footer {
   text-align: center;
   padding: 10px 0;
   font-size: 14px;
-  height: 65px;
+  height: auto;
 }
 
 
@@ -138,9 +138,10 @@ footer {
 }
 
 .navbar-logo {
-  width: 50px;
+  width: 50px; 
   height: 50px;
   border-radius: 50%;
+  object-fit: contain; 
 }
 
 .login-btn {
@@ -158,8 +159,8 @@ footer {
 }
 
 .login-btn:hover {
-  transform: scale(1.1); 
-  color: #1abc9c;
+  color: #dee9e7;
+  transform: scale(1.1);
 }
 
 /* RoomDetail */

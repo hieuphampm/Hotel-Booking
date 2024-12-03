@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from './Footer';
+import Room from './Room';
 import './style.css'; 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         <h1>Welcome to Serenity Hotel</h1>
         <p>Your gateway to luxury and relaxation.</p>
       </main>
+      <Room />
       <Footer />
     </div>
   );

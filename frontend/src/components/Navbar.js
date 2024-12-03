@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ height: "auto" }}>
       <div className="container">
         <a className="navbar-brand" href="/">
           <img src={logo} alt="logo" className="navbar-logo" />

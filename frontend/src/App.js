@@ -10,6 +10,7 @@ import Presidential_Suite from './components/Rooms/PresidentialSuite';
 import Standard_Room from './components/Rooms/StandardRoom';
 import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
+import Gallery from './components/Gallery';
 
 export class App extends Component {
   render() {
@@ -26,6 +27,7 @@ export class App extends Component {
           <Route exact path="presidential-suite" element={<Presidential_Suite />} />
           <Route exact path="/contact" element={<ContactUs />} />
           <Route exact path="/about" element={<AboutUs />} />
+          <Route exact path="/gallery" element={<Gallery />} />
         </Routes>
       </BrowserRouter>
     );

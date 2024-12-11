@@ -273,3 +273,44 @@ footer {
     text-align: center;
   }
 }
+
+
+.about-us-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.about-us-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.about-us-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.about-us-content p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.about-us-footer {
+  margin-top: 20px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #3b5998;
+  font-weight: bold;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}

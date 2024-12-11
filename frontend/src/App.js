@@ -6,8 +6,9 @@ import Register from './components/Register';
 import Deluxe_Room from './components/Rooms/DeluxeRoom'
 import Dormitory_Room from './components/Rooms/DormitoryRoom'
 import Family_Room from './components/Rooms/FamilyRoom'
-import Presidential_Suite from './components/Rooms/PresidentialSuite'
+import Presidential_Suite from './components/Rooms/PresidentialSuite' 
 import Standard_Room from './components/Rooms/StandardRoom'
+import ContactUs from './components/ContactUs'
 
 export class App extends Component {
   render() {
@@ -20,8 +21,9 @@ export class App extends Component {
             <Route exact path="standard-room" element={<Standard_Room />} />
             <Route exact path="deluxe-room" element={<Deluxe_Room />} />
             <Route exact path="family-room" element={<Family_Room />} />
-            <Route exact path="dormitory-room" element={<Dormitory_Room />} />
+            <Route exact path="dormitory-room" element={<Dormitory_Room />} />  
             <Route exact path="presidential-suite" element={<Presidential_Suite />} />
+            <Route exact path="/contact" element={<ContactUs />} />
           </Routes>
         </BrowserRouter>
     );
@@ -29,3 +31,4 @@ export class App extends Component {
 }
 
 export default App;
+

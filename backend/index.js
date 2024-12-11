@@ -1,8 +1,11 @@
 const express = require('express');
 const { Client } = require('pg');
 require('dotenv').config(); 
+const path = require('path');
 
 const server = express();
+
+server.use('/static', express.static(path.join(__dirname, 'public')));
 
 server.get('/', async function(req, res) {
     const client = new Client({        
@@ -32,4 +35,5 @@ server.get('/', async function(req, res) {
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    console.log(`Static files are served at http://localhost:${PORT}/static`);
 });

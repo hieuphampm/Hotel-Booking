@@ -1,44 +1,22 @@
-'use strict';
+exports.up = async function(knex) {
+  await knex.raw(`
+      CREATE TABLE room(  
+          room_id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+          name text,
+          price int,
+          imageUrl text, 
+          description text  
+      );
+      COMMENT ON TABLE room IS 'Room';
+      COMMENT ON COLUMN room.name IS 'Room Name';
+      COMMENT ON COLUMN room.price IS 'Room Price';
+      COMMENT ON COLUMN room.imageUrl IS 'Room Images';
+      COMMENT ON COLUMN room.description IS 'Room Description';
+  `);
+};
 
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Rooms', {
-      id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      description: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      imageUrl: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      route: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-    });
-  },
-
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Rooms');
-  },
+exports.down = async function(knex) {
+  await knex.raw(`
+      DROP TABLE room;
+  `);
 };

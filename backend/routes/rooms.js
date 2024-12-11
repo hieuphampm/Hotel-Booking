@@ -5,8 +5,8 @@ const router = express.Router();
 // 1. Get all rooms
 router.get('/rooms', async (req, res) => {
   try {
-    const rooms = await Room.findAll();  // Get all rooms from the database
-    res.json(rooms);  // Send the room data as a JSON response
+    const rooms = await Room.findAll({ attributes: ['id', 'name', 'price', 'imageUrl', 'description'] });
+    res.json(rooms);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'An error occurred while fetching rooms' });

@@ -26,7 +26,7 @@ export class App extends Component {
           <Route exact path="dormitory-room" element={<Dormitory_Room />} />
           <Route exact path="presidential-suite" element={<Presidential_Suite />} />
           <Route exact path="/contact" element={<ContactUs />} />
-          <Route exact path="/about" element={<AboutUs />} />
+          <Route exact path="/about-us" element={<AboutUs />} />
           <Route exact path="/gallery" element={<Gallery />} />
         </Routes>
       </BrowserRouter>

@@ -1,14 +1,18 @@
 const express = require('express');
 const { Client } = require('pg');
-require('dotenv').config(); 
+require('dotenv').config();
 const path = require('path');
+const roomRoutes = require('./routes/roomRoutes'); 
 
 const server = express();
 
+server.use(express.json()); 
 server.use('/static', express.static(path.join(__dirname, 'public')));
 
+server.use('/api', roomRoutes); 
+
 server.get('/', async function(req, res) {
-    const client = new Client({        
+    const client = new Client({
         host: `${process.env.POSTGRES_HOST}`,
         port: `${process.env.POSTGRES_PORT}`,
         database: `${process.env.POSTGRES_DB}`,

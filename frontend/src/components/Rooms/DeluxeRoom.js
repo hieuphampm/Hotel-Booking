@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import '../style.css'
 
 const Deluxe_Room = () => {
   return (

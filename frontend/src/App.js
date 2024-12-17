@@ -11,6 +11,7 @@ import Standard_Room from './components/Rooms/StandardRoom';
 import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
+import Booking from './components/Booking';
 
 export class App extends Component {
   render() {
@@ -28,6 +29,7 @@ export class App extends Component {
           <Route exact path="/contact" element={<ContactUs />} />
           <Route exact path="/about-us" element={<AboutUs />} />
           <Route exact path="/gallery" element={<Gallery />} />
+          <Route exact path="/booking" element={<Booking />} />
         </Routes>
       </BrowserRouter>
     );

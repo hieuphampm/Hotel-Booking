@@ -7,7 +7,6 @@ import img15 from "../../imgs/img15.jpg";
 import img16 from "../../imgs/img16.jpg";
 import img17 from "../../imgs/img17.jpg";
 
-
 const DormitoryRoom = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

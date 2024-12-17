@@ -5,7 +5,7 @@ const Room = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/rooms') 
+    fetch('http://localhost:8080/rooms') 
       .then((response) => response.json())
       .then((data) => setRooms(data))
       .catch((error) => console.error('Error fetching rooms:', error));

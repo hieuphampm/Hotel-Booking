@@ -8,8 +8,14 @@ import Dormitory_Room from './components/Rooms/DormitoryRoom'
 import Family_Room from './components/Rooms/FamilyRoom'
 import Presidential_Suite from './components/Rooms/PresidentialSuite'
 import Standard_Room from './components/Rooms/StandardRoom'
+// import useSWR from 'swr';
+// const fetcher = (...args) => fetch(...args).then(res => res.json());
+
+// var api = "http://localhost:8080";
+// const { data, error, isLoading } = useSWR(api, fetcher);
 
 export class App extends Component {
+  
   render() {
     return (
         <BrowserRouter>

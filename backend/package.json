@@ -1,18 +1,23 @@
 {
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "knex": "^3.1.0",
-    "mongoose": "^6.0.0",
-    "multer": "^1.4.5-lts.1",
-    "pg": "^8.13.1",
-    "restify": "^11.1.0"
-  },
+  "name": "backend",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "pg": "^8.13.1",
+    "pg-format": "^1.0.4",
+    "restify": "^11.1.0",
+    "restify-cors-middleware2": "^2.2.1",
+    "restify-router": "^0.6.2"
+  },
   "devDependencies": {
     "nodemon": "^3.1.9"
   }

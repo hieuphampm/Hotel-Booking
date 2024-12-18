@@ -32,3 +32,14 @@ services:
       POSTGRES_DB: "${POSTGRES_DB}"
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      SECRET_KEY: "${SECRET_KEY}"
+
+  frontend:
+    build: ./frontend
+    image: frontend_image
+    container_name: frontend_1
+    command: bash -c "npm start"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/data/app

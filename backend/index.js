@@ -1,31 +1,40 @@
 const restify = require('restify');
 const server = restify.createServer();
 
-// CORS middleware thủ công
+// Middleware for CORS
 server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'); 
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, Content-Type');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-
     if (req.method === 'OPTIONS') {
-        res.send(204); 
-    } else {
-        next();
+        res.sendStatus(204);
+        return;
     }
+    next();
 });
 
-// BodyParser và QueryParser
-server.use(restify.plugins.bodyParser({ mapParams: true }));
+server.use(restify.plugins.bodyParser({ mapParams: false }));
 server.use(restify.plugins.queryParser());
 
-// Import routes
-const root = require('./routes/root');
-const room = require('./routes/roomRoutes');
+// Routes
+const rootRoutes = require('./routes/root');
+const roomRoutes = require('./routes/roomRoutes');
+const authRoutes = require('./routes/authRoutes');
+const bookingRoutes = require('./routes/bookingRoutes');
 
-root.applyRoutes(server);
-room.applyRoutes(server);
+rootRoutes.applyRoutes(server);
+roomRoutes.applyRoutes(server);
+authRoutes.applyRoutes(server);
+bookingRoutes.applyRoutes(server);
 
-// Khởi động server
+// Error Handling
+server.on('restifyError', (req, res, err, callback) => {
+    console.error('Error occurred:', err);
+    res.send(err.status || 500, { message: err.message || 'Internal Server Error' });
+    return callback();
+});
+
+// Start Server
 const PORT = 8080;
 server.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);

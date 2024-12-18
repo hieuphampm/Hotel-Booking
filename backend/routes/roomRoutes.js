@@ -1,12 +1,10 @@
 require('dotenv').config();
 
-var restify = require('restify');
-var jwt = require('jsonwebtoken');
-var Router = require('restify-router').Router;
-var router = new Router();
+const restify = require('restify');
+const Router = require('restify-router').Router;
 const { Pool } = require('pg');
-const RoomModel = require('../models/roomModel');
 
+const router = new Router();
 const pool = new Pool({
   user: process.env.POSTGRES_USER,
   host: process.env.POSTGRES_HOST,
@@ -15,14 +13,17 @@ const pool = new Pool({
   port: process.env.POSTGRES_PORT,
 });
 
+const server = restify.createServer();
+server.use(restify.plugins.bodyParser());
+
 router.get('/rooms', async (req, res) => {
   try {
     console.log('Fetching all rooms...');
     const result = await pool.query('SELECT * FROM rooms');
-    res.send(200, result.rows); 
+    res.send(200, { message: 'Rooms fetched successfully', data: result.rows });
   } catch (error) {
-    console.error('Error in /rooms route:', error);
-    res.send(500, { message: 'Failed to get rooms', error });
+    console.error('Error fetching all rooms:', error);
+    res.send(500, { message: 'Failed to fetch rooms', error: error.message });
   }
 });
 
@@ -35,51 +36,67 @@ router.get('/rooms/:id', async (req, res) => {
     if (!room) {
       return res.send(404, { message: 'Room not found' });
     }
-    res.send(200, room);
+    res.send(200, { message: 'Room fetched successfully', data: room });
   } catch (error) {
-    console.error('Error in /rooms/:id route:', error);
-    res.send(500, { message: 'Failed to get room', error });
+    console.error(`Error fetching room with ID ${id}:`, error);
+    res.send(500, { message: 'Failed to fetch room', error: error.message });
   }
 });
 
-router.post('/rooms', async (req, res) => {
+router.post("/rooms", async (req, res) => {
+  console.log("Received request body:", req.body);
+
   const { roomType, description, imageURL, price, amenities } = req.body;
+
+  if (!roomType || !description || !imageURL || !price || !amenities) {
+    return res.send(400, { message: "Missing required fields in the request body" });
+  }
+
+  const client = await pool.connect(); 
   try {
-    console.log('Creating new room...');
-    const result = await pool.query(
-      'INSERT INTO rooms (room_type, description, image_url, price, amenities) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+    const result = await client.query(
+      `INSERT INTO rooms ("roomType", "description", "imageURL", "price", "amenities")
+       VALUES ($1, $2, $3, $4, $5)
+       RETURNING *;`,
       [roomType, description, imageURL, price, amenities]
     );
-    const newRoom = result.rows[0];
-    res.send(201, newRoom);
+    res.send(201, result.rows[0]);
   } catch (error) {
-    console.error('Error in /rooms POST route:', error);
-    res.send(500, { message: 'Failed to create room', error });
+    console.error("Error in /rooms POST route:", error);
+    res.send(500, { message: "Internal server error", error });
+  } finally {
+    client.release();
   }
 });
 
 router.put('/rooms/:id', async (req, res) => {
   const { id } = req.params;
   const { roomType, description, imageURL, price, amenities } = req.body;
+
   try {
     console.log(`Updating room with ID: ${id}`);
     const result = await pool.query(
-      'UPDATE rooms SET room_type = $1, description = $2, image_url = $3, price = $4, amenities = $5 WHERE id = $6 RETURNING *',
+      `UPDATE rooms 
+       SET "roomType" = $1, "description" = $2, "imageURL" = $3, "price" = $4, "amenities" = $5
+       WHERE id = $6
+       RETURNING *;`,
       [roomType, description, imageURL, price, amenities, id]
     );
+
     const updatedRoom = result.rows[0];
     if (!updatedRoom) {
       return res.send(404, { message: 'Room not found' });
     }
-    res.send(200, updatedRoom);
+    res.send(200, { message: 'Room updated successfully', data: updatedRoom });
   } catch (error) {
-    console.error('Error in /rooms/:id PUT route:', error);
-    res.send(500, { message: 'Failed to update room', error });
+    console.error(`Error updating room with ID ${id}:`, error);
+    res.send(500, { message: 'Failed to update room', error: error.message });
   }
 });
 
 router.del('/rooms/:id', async (req, res) => {
   const { id } = req.params;
+
   try {
     console.log(`Deleting room with ID: ${id}`);
     const result = await pool.query('DELETE FROM rooms WHERE id = $1 RETURNING *', [id]);
@@ -87,10 +104,10 @@ router.del('/rooms/:id', async (req, res) => {
     if (!deletedRoom) {
       return res.send(404, { message: 'Room not found' });
     }
-    res.send(200, { message: 'Room deleted successfully' });
+    res.send(200, { message: 'Room deleted successfully', data: deletedRoom });
   } catch (error) {
-    console.error('Error in /rooms/:id DELETE route:', error);
-    res.send(500, { message: 'Failed to delete room', error });
+    console.error(`Error deleting room with ID ${id}:`, error);
+    res.send(500, { message: 'Failed to delete room', error: error.message });
   }
 });
 

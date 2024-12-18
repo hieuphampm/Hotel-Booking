@@ -1,4 +1,4 @@
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   return knex("rooms").del()
     .then(function () {
       return knex("rooms").insert([
@@ -35,7 +35,7 @@ exports.seed = function(knex) {
           description: "The pinnacle of luxury and grandeur, featuring a spacious layout, a private living room, a dining area, and exclusive services. Designed for those who seek an unforgettable and opulent experience.",
           imageURL: "https://firebasestorage.googleapis.com/v0/b/computer-shop-management-a2cdd.appspot.com/o/hotel-img%2FPresidential-Suite-Room.jpg?alt=media&token=0a8d40a7-19f5-4894-943f-17fa7c3b70be",
           price: 2500000,
-          amenities: ["Free Wi-Fi", "Air Conditioning", "TV", "Private Bathroom"]
+          amenities: ["Free Wi-Fi", "Air Conditioning", "TV", "Private Bathroom", "Personal Butler", "Jacuzzi", "Mini Bar", "Private Pool"]
         }
       ]);
     });

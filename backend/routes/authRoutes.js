@@ -1,12 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const authController = require('../models/authController');
+require('dotenv').config();
 
-router.post('/login', authController.login);
-router.post('/register', authController.register);
+var restify = require('restify');
+var jwt = require('jsonwebtoken');
+const { Pool } = require('pg');
+const RoomModel = require('../models/roomModel');
+const authController = require('../models/authController'); 
 
 module.exports = {
   applyRoutes: function (server) {
-    server.use('/auth', router);  
+    server.post('/auth/login', authController.login);
+
+    server.post('/auth/register', authController.register);
   }
 };

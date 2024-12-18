@@ -6,13 +6,11 @@ import './style.css';
 const AboutUs = () => {
   return (
     <div className="about-us-container">
-      {/* Header */}
       <div className="about-us-header">
         <h1>About Serenity Hotel</h1>
         <p>Your perfect getaway destination</p>
       </div>
 
-      {/* Introduction */}
       <div className="about-us-section">
         <h2>Our Story: The Need for Serenity</h2>
         <p>
@@ -23,7 +21,6 @@ const AboutUs = () => {
         </p>
       </div>
 
-      {/* Problem and Inspiration */}
       <div className="about-us-section">
         <h2>Why We Built Serenity Hotel</h2>
         <p>
@@ -34,7 +31,6 @@ const AboutUs = () => {
         </p>
       </div>
 
-      {/* Challenges and Solutions */}
       <div className="about-us-section">
         <h2>Challenges and How We Overcame Them</h2>
         <p>
@@ -45,7 +41,6 @@ const AboutUs = () => {
         </p>
       </div>
 
-      {/* Achievements */}
       <div className="about-us-section">
         <h2>Our Achievements</h2>
         <p>
@@ -59,7 +54,6 @@ const AboutUs = () => {
         </ul>
       </div>
 
-      {/* Vision and Future */}
       <div className="about-us-section">
         <h2>Our Vision for the Future</h2>
         <p>
@@ -70,7 +64,6 @@ const AboutUs = () => {
         </p>
       </div>
 
-      {/* Footer */}
       <div className="about-us-footer">
         <p>Follow us on social media:</p>
         <a

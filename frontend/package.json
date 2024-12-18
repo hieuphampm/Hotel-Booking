@@ -1,7 +1,15 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start && node index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
@@ -14,11 +22,8 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^4.2.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
   "eslintConfig": {
     "extends": [
@@ -38,7 +43,6 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  "author": "",
+  "license": "ISC"
 }

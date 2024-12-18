@@ -23,7 +23,6 @@ const DeluxeRoom = () => {
     <div className="container-fluid p-0">
       <Navbar />
 
-      {/* Hero Section */}
       <div
         className="text-white text-center py-5"
         style={{
@@ -41,10 +40,8 @@ const DeluxeRoom = () => {
         </div>
       </div>
 
-      {/* Room Details */}
       <section className="my-5 container">
         <div className="row align-items-center">
-          {/* Image Carousel */}
           <div className="col-md-6">
             <div id="dormCarousel" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-indicators">
@@ -99,7 +96,6 @@ const DeluxeRoom = () => {
             </div>
           </div>
 
-          {/* Room Info */}
           <div className="col-md-6">
             <h2 className="fw-bold mb-4">Deluxe Room</h2>
             <p className="text-muted">
@@ -130,7 +126,6 @@ const DeluxeRoom = () => {
         </div>
       </section>
 
-      {/* Booking Form */}
       <section className="bg-light py-5">
         <div className="container">
           <h3 className="text-center fw-bold mb-4">Book Your Stay</h3>

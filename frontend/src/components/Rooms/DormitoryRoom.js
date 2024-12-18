@@ -37,7 +37,8 @@ const DormitoryRoom = () => {
           style={{ background: "rgba(0, 0, 0, 0.5)" }}
         >
           <h1 className="display-4 fw-bold">Dormitory Room</h1>
-          <p className="lead mb-0">Perfect for large groups and families</p>
+          <p className="lead mb-0">Dorm rooms can range from single-occupancy to rooms housing multiple students, often with shared bathrooms and common areas like lounges or kitchens.   
+          </p>
         </div>
       </div>
 
@@ -103,15 +104,14 @@ const DormitoryRoom = () => {
           <div className="col-md-6">
             <h2 className="fw-bold mb-4">Dormitory Room</h2>
             <p className="text-muted">
-              Our spacious dormitory room is ideal for groups, students, and families looking
-              for a budget-friendly, fun, and comfortable stay.
+             Dormitory rooms are shared living spaces, typically found in educational institutions. They provide affordable housing for students, fostering community and convenience.
             </p>
             <ul className="list-unstyled">
               <li>
-                <strong>Price:</strong> $60 per night/person
+                <strong>Price:</strong> $40 per night/person
               </li>
               <li>
-                <strong>Max Guests:</strong> 10 people
+                <strong>Max Guests:</strong> 9 people
               </li>
               <li>
                 <strong>Check-in:</strong> 2:00 PM
@@ -120,7 +120,7 @@ const DormitoryRoom = () => {
                 <strong>Check-out:</strong> 11:00 AM
               </li>
               <li>
-                <strong>Amenities:</strong> Shared kitchen, lounge area, high-speed Wi-Fi
+                <strong>Amenities:</strong> Shared kitchen, lounge area, high-speed Wi-Fi, can accommodate two, three, or four students
               </li>
               <li>
                 <strong>Room Service:</strong> On demand

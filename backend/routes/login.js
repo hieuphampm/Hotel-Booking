@@ -2,10 +2,10 @@ var jwt = require('jsonwebtoken');
 var Router = require('restify-router').Router;
 const router = new Router();
 const User = require('../models/user');
-const {sign} = require('./authenticate');
+const {sign} = require('./middleware/authenticate');
 
 router.post('/login', async (req, res) => {
-    var {username = "", password = ""} = req.params;
+    var {username = "", password = ""} = req.query;
 
     if ((username.length == 0)
         || (password.length == 0)

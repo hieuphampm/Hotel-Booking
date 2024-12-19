@@ -5,15 +5,15 @@ var Router = require('restify-router').Router;
 var router = new Router();
 router.applyRoutes(server);
 
-function getPgClient() {
-    return new Client({    
-        host: `${process.env.POSTGRES_HOST}`,
-        port: `${process.env.POSTGRES_PORT}`,
-        database: `${process.env.POSTGRES_DB}`,
-        user: `${process.env.POSTGRES_USER}`,
-        password: `${process.env.POSTGRES_PASSWORD}`,
-    })
-}
+// function getPgClient() {
+//     return new Client({    
+//         host: `${process.env.POSTGRES_HOST}`,
+//         port: `${process.env.POSTGRES_PORT}`,
+//         database: `${process.env.POSTGRES_DB}`,
+//         user: `${process.env.POSTGRES_USER}`,
+//         password: `${process.env.POSTGRES_PASSWORD}`,
+//     })
+// }
 
 var server = restify.createServer();
 const { Client } = require('pg');
@@ -34,10 +34,17 @@ server.use(restify.plugins.queryParser());
 
 const root = require('./routes/root');
 const room = require('./routes/room');
-
+const login = require('./routes/login');
+const manager = require('./routes/manager');
+const booking = require('./routes/booking')
+const booking_detail = require('./routes/booking_detail')
 
 root.applyRoutes(server);
-room.applyRoutes(server)
+login.applyRoutes(server);
+room.applyRoutes(server);
+manager.applyRoutes(server);
+booking.applyRoutes(server);
+booking_detail.applyRoutes(server);
 
 var PORT = 8080;
 server.listen(PORT, function() {

@@ -6,7 +6,7 @@ const RoomDetail = () => {
   const [room, setRoom] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/rooms/${id}`)
+    fetch(`http://localhost:8080/rooms/${id}`)
       .then((response) => response.json())
       .then((data) => setRoom(data))
       .catch((error) => console.error('Error fetching room:', error));

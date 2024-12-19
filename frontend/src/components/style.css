@@ -273,3 +273,387 @@ footer {
     text-align: center;
   }
 }
+
+
+.about-us-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.about-us-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.about-us-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.about-us-content p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.about-us-footer {
+  margin-top: 20px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #3b5998;
+  font-weight: bold;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
+
+/* DeluxeRoom.css */
+
+/* General Styling */
+.container-fluid {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url('../imgs/img11.jpg') center/cover no-repeat;
+  height: 50vh;
+  position: relative;
+  color: white;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Room Details */
+.room-details {
+  padding: 3rem 0;
+}
+
+.room-details h2 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.room-details p {
+  color: #555;
+}
+
+.room-details img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Booking Form */
+.booking-form {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.booking-form button {
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Reviews */
+.reviews {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.reviews h3 {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.reviews .review-box {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.reviews .review-box div {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+}
+
+.reviews p {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.reviews h5 {
+  color: #007bff;
+  font-size: 1.25rem;
+}
+
+/* Gallery */
+/* Tổng quát */
+.gallery-container {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Phần hình ảnh */
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-container {
+  width: 70%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.prev,
+button.next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+}
+
+button.prev:hover,
+button.next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.details {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.details h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.details p {
+  color: #666;
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+/* Thumbnails */
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* General container */
+.about-us-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.about-us-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-us-header h1 {
+  font-size: 2.8rem;
+  color: #2c3e50;
+}
+
+.about-us-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Section Styles */
+.about-us-section {
+  margin-bottom: 20px;
+}
+
+.about-us-section h2 {
+  font-size: 1.8rem;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.about-us-section p,
+.about-us-section ul {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.about-us-section ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Footer */
+.about-us-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  color: #1877f2;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Booking */
+.booking-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.booking-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+input,
+select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

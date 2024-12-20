@@ -1,48 +1,54 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img1 from '../imgs/img1.jpg';
 import './style.css';
-import Navbar from './Navbar';
 import Footer from './Footer';
 
-const API_URL = process.env.REACT_APP_API_URL ;
-
-const LogIn = () => {
+const LogIn = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    try {
-      const response = await fetch(`${API_URL}/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
-      }
-
-      localStorage.setItem('token', data.token);
-      alert('Login successful!');
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+  const validateInput = () => {
+    if (!email) {
+      return 'Email is required';
     }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      return 'Invalid email format';
+    }
+    if (!password) {
+      return 'Password is required';
+    }
+    return null;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError('');
+    const validationError = validateInput();
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    setLoading(true);
+
+    // Simulate login process
+    setTimeout(() => {
+      setLoading(false);
+      if (email === 'admin@admin.com' && password === '1234') {
+        onLogin(); 
+        navigate('/'); 
+      } else {
+        setError('Invalid email or password');
+      }
+    }, 1000);
   };
 
   return (
     <>
-      <Navbar />
       <div className="page">
         <div className="left-section d-flex align-items-center justify-content-center">
           <div className="form-container p-4 border rounded shadow">

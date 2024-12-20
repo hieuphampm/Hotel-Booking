@@ -1,14 +1,12 @@
 import React from 'react';
 import { Icon } from 'react-icons-kit';
 import { facebook } from 'react-icons-kit/fa/facebook';
-import Navbar from '../components/Navbar';
 import Footer from './Footer';
 import './style.css';
 
 const AboutUs = () => {
   return (
     <div>
-      <Navbar />
       <div className="about-us-container">
         
         <div className="about-us-header">

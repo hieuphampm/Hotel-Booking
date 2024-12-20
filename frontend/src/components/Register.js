@@ -2,13 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import img2 from '../imgs/img2.jpg';
 import './style.css';
-import Navbar from './Navbar';
 import Footer from './Footer';
 
 const Register = () => {
   return (
     <>
-      <Navbar />
       <div className="page">
         <div className="left-section d-flex align-items-center justify-content-center">
           <div className="form-container p-4 border rounded shadow">

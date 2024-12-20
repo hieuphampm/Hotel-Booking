@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit';
 import { facebook } from 'react-icons-kit/fa/facebook';
-import Navbar from '../components/Navbar';
 import Footer from './Footer';
 import "./style.css";
 
@@ -32,7 +31,6 @@ const contacts = [
 const ContactUs = () => {
   return (
     <div>
-      <Navbar />
       <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
         <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Contact Us</h1>
         <p style={{ textAlign: 'center', marginBottom: '40px', color: '#555' }}>{groupIntro}</p>

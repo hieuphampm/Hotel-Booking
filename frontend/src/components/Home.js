@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import Footer from './Footer';
 import Room from './Room';
 import './style.css';
@@ -9,7 +8,7 @@ import Services from './Services';
 const Home = () => {
   return (
     <div className="page-container">
-      <Navbar />
+      
 
       <div className="banner position-relative text-center text-white">
         <img
@@ -36,7 +35,7 @@ const Home = () => {
         </div>
       </div>
       
-      <div className='discover_room'>
+      <div id="room" className='discover_room'>
         <h2 className="text-center mb-4">Discover Us Room</h2>
         <Room />
       </div>

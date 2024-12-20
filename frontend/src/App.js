@@ -13,16 +13,29 @@ import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
 import Booking from './components/Booking';
 import Payment from './components/Payment';
-import ForgotPassword from './components/ForgotPassword'
+import ForgotPassword from './components/ForgotPassword';
+import Navbar from './components/Navbar';
 
 export class App extends Component {
-  
+  state = {
+    isLoggedIn: false,
+  };
+
+  handleLogin = () => {
+    this.setState({ isLoggedIn: true });
+  };
+
   render() {
     return (
       <BrowserRouter>
+        <Navbar isLoggedIn={this.state.isLoggedIn} />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="log-in" element={<LogIn />} />
+          <Route
+            exact
+            path="log-in"
+            element={<LogIn onLogin={this.handleLogin} />}
+          />
           <Route exact path="register" element={<Register />} />
           <Route exact path="standard-room" element={<Standard_Room />} />
           <Route exact path="deluxe-room" element={<Deluxe_Room />} />

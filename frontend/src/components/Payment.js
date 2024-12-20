@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
-import Navbar from './Navbar';
 
 const Payment = () => {
   return (
     <>
-      <Navbar />
       <div className="page">
         <div className="info-container">
           <div className="form-container">

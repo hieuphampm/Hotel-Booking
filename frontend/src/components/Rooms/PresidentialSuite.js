@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../Navbar";
 import Footer from "../Footer";
 import "../style.css";
 import img22 from "../../imgs/img22.jpg";
@@ -21,7 +20,7 @@ const FamilyRoom = () => {
 
   return (
     <div className="container-fluid p-0">
-      <Navbar />
+   
 
       <div
         className="text-white text-center py-5"

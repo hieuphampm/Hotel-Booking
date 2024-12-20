@@ -5,7 +5,6 @@ import img4 from '../imgs/img4.jpg';
 import img5 from '../imgs/img5.jpg';
 import img6 from '../imgs/img6.jpg';
 import img7 from '../imgs/img7.jpg';
-import Navbar from '../components/Navbar';
 import Footer from './Footer';
 
 const hotels = [
@@ -90,7 +89,6 @@ const Gallery = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="gallery-container">
         <h1 className="gallery-title">Serenity Hotel Gallery</h1>
         <div className="gallery">

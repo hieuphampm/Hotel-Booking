@@ -1,8 +1,14 @@
-body{
+html, body {
+  height: 100%;
+  margin: 0;
   background-color: #FAF9F6 !important;
-}
-html {
   scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* home */
@@ -28,7 +34,6 @@ footer {
   text-align: center;
   padding: 10px 0;
   font-size: 14px;
-  height: auto;
 }
 
 

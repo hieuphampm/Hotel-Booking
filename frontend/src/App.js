@@ -12,8 +12,7 @@ import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
 import Booking from './components/Booking';
-import ForgotPassword from './components/ForgotPassword'
-import Payment from './components/Payment'
+import Payment from './components/Payment';
 
 export class App extends Component {
   
@@ -33,7 +32,6 @@ export class App extends Component {
           <Route exact path="about-us" element={<AboutUs />} />
           <Route exact path="gallery" element={<Gallery />} />
           <Route exact path="booking" element={<Booking />} />
-          <Route exact path="forgot-password" element={<ForgotPassword />} />
           <Route exact path="payment" element={<Payment />} />
         </Routes>
       </BrowserRouter>

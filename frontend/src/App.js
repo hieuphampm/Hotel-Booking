@@ -13,6 +13,7 @@ import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
 import Booking from './components/Booking';
 import Payment from './components/Payment';
+import ForgotPassword from './components/ForgotPassword'
 
 export class App extends Component {
   
@@ -33,6 +34,7 @@ export class App extends Component {
           <Route exact path="gallery" element={<Gallery />} />
           <Route exact path="booking" element={<Booking />} />
           <Route exact path="payment" element={<Payment />} />
+          <Route exact path="forgot-password" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     );

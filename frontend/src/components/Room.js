@@ -11,31 +11,31 @@ const Room = () => {
     {
       title: 'Standard Room',
       image: standardRoom,
-      link: '/Standard_Room',
+      link: '/standard-room',
       description: 'A cozy room perfect for solo travelers.',
     },
     {
       title: 'Deluxed Room',
       image: deluxedRoom,
-      link: '/Deluxed_Room',
+      link: '/deluxe-room',
       description: 'Enjoy a luxurious stay with premium facilities.',
     },
     {
       title: 'Family Room',
       image: familyRoom,
-      link: '/Family_Room',
+      link: '/family-room',
       description: 'Spacious and comfortable for families.',
     },
     {
       title: 'Dormitory Room',
       image: dormitoryRoom,
-      link: '/Dormitory_Room',
+      link: '/dormitory-room',
       description: 'Affordable and convenient for groups.',
     },
     {
       title: 'Presidential Room',
       image: presidentialRoom,
-      link: '/Presidential_Room',
+      link: '/presidential-suite',
       description: 'Experience luxury like never before.',
     },
   ];

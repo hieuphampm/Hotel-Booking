@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './style.css';
-import Navbar from '../components/Navbar';
 import Footer from './Footer';
 
 const Booking = () => {
@@ -29,7 +28,6 @@ const Booking = () => {
 
   return (
     <>
-      <Navbar />
       <div className="booking-container">
         <h1 className="booking-title">Hotel Booking Form</h1>
         <form onSubmit={handleSubmit} className="booking-form">

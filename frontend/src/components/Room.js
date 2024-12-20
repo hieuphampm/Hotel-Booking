@@ -50,7 +50,7 @@ const Room = () => {
               <div className="card-body">
                 <h5 className="card-title">{room.title}</h5>
                 <p className="card-text">{room.description}</p>
-                <Link to={room.link} className="btn btn-primary">View more</Link>
+                <Link to={room.link} className="btn btn-dark">View more</Link>
               </div>
             </div>
           </div>

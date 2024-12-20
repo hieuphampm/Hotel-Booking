@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Payment = () => {
   return (
@@ -37,6 +38,7 @@ const Payment = () => {
           <img src="../imgs/payment.jpg" alt="Payment" />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -11,6 +11,13 @@ const Navbar = () => {
           <img src={logo} alt="logo" className="navbar-logo" />
         </a>
 
+        <div className="footer-links">
+                  <Link to="/about-us" className="footer-link">About Us</Link>
+                  <Link to="/#room" className="footer-link">Rooms</Link>
+                  <Link to="/contact" className="footer-link">Contact</Link>
+                  <Link to="/gallery" className="footer-link">Gallery</Link>
+                </div>
+
         <div className="ml-auto">
           <Link to="/log-in" className="btn btn-outline-light login-btn">
             <svg

@@ -5,12 +5,6 @@ import Room from './Room';
 import './style.css'; 
 
 const Home = () => {
-  useEffect(() => {
-    if (window.location.hash === '#room') {
-      document.getElementById('room').scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
-
   return (
     <div className="page-container">
       <Navbar />

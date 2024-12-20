@@ -22,7 +22,7 @@ const Footer = () => {
 
         <div className="footer-contact">
           <p>Phone: +84-085-186-189</p>
-          <p>Email: contact@serenityhotel.com</p>
+          <p>Email: contact@the_biggest_hotel.com</p>
           <p>Address: 123 Cat Lat Street</p>
         </div>
       </div>

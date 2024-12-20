@@ -6,7 +6,7 @@ html {
 }
 
 /* home */
-#room {
+.discover_room {
   margin-bottom: 20px; 
 }
 
@@ -681,51 +681,57 @@ select:focus {
 }
 
 
-.forgot-password-container {
+
+/* Services */
+.services-carousel-container {
   width: 100%;
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   background-color: #f9f9f9;
-  text-align: center;
-  font-family: Arial, sans-serif;
 }
 
-.forgot-password-container h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.services-carousel {
+  display: flex;
+  align-items: center;
+  animation: slide 10s linear infinite; 
 }
 
-.forgot-password-container form {
+.service-card {
+  width: 150px;
+  height: 150px;
+  margin: 0 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  flex-shrink: 0;
 }
 
-.forgot-password-container input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.service-icon {
+  font-size: 2.5em;
+  margin-bottom: 5px;
+  color: #40E0D0;
 }
 
-.forgot-password-container .btn {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.service-card h3 {
+  font-size: 0.9em; 
+  color: #333;
 }
 
-.forgot-password-container .btn:hover {
-  background-color: #0056b3;
-}
-
-.message {
-  margin-top: 15px;
-  color: green;
-  font-size: 14px;
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

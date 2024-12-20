@@ -70,7 +70,7 @@ const Gallery = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % hotels.length);
-    }, 3000); // 3000ms = 3 giây
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 

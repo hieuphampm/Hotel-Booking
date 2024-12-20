@@ -33,7 +33,7 @@ const ForgotPassword = () => {
 
     console.log(`Verifying code: ${verificationCode}`);
     setMessage('Verification successful. Please set your new password.');
-    setStep(3);
+    setStep(3); 
   };
 
   const handlePasswordSubmit = (e) => {

@@ -72,7 +72,7 @@ let rules = {
     "/services/:id": {
         "GET": {},
         "PATCH": {
-            id: "required|integer|min:1",
+            service_id: "required|integer|min:1",
             service_name: "string",
             service_price: "integer|min:0",
         },

@@ -62,28 +62,31 @@ let rules = {
             id: "required|integer|min:1",
         },
     },
+    "/services": {
+    "GET": {},
+    "POST": {
+        service_name: "required|string",
+        service_price: "required|integer|min:0",
+        },
+    },
+    "/services/:id": {
+        "GET": {},
+        "PATCH": {
+            id: "required|integer|min:1",
+            service_name: "string",
+            service_price: "integer|min:0",
+        },
+        "DELETE": {
+            id: "required|integer|min:1",
+        },
+    },
+
 };
-
-
-// module.exports.validated = function (req, res, next) {
-//     let {method, path} = req.getRoute();
-//     let rule = rules[path][method];
-//     // let validation = new Validator(req.params, rule);
-//     let validation = new Validator(req.body, rule);
-
-//     if (validation.fails()) {
-//         res.send({
-//             success: false, code: 400, message: "Bad request", 
-//             data: validation.errors
-//         }); return next(false);
-//     }
-
-//     return next();
-// }
 
 const standardizeToGenericPath = (path) => {
     return path.replace(/\/\w+/g, (match, index) => (index > 0 ? "/:username" : match));
 };
+
 
 module.exports.validated = function (req, res, next) {
     let { method, path } = req.getRoute();
@@ -100,7 +103,7 @@ module.exports.validated = function (req, res, next) {
     }
 
     let rule = rules[genericPath][method];
-    let validation = new Validator(req.body, rule);
+    let validation = new Validator(req.method === "GET" || req.method === "DELETE" ? req.params : req.body, rule);
 
     if (validation.fails()) {
         res.send({

@@ -81,6 +81,16 @@ let table_policies = {
             DELETE: true,
         },
     },
+    "/services": {
+    admin: { GET: true, POST: true },
+    manager: { GET: true, POST: true },
+    customer: { GET: true },
+    },
+    "/services/:id": {
+        admin: { GET: true, PATCH: true, DELETE: true },
+        manager: { GET: true, PATCH: true, DELETE: true },
+        customer: { GET: true },
+    },  
 };
 
 

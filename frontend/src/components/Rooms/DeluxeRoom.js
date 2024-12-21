@@ -197,7 +197,7 @@ const DeluxeRoom = () => {
               />
             </div>
             <div className="col-12 text-center">
-              <button type="submit" className="btn btn-primary btn-lg">
+              <button type="submit" className="btn btn-dark w-50 btn-lg">
                 Submit Booking
               </button>
             </div>

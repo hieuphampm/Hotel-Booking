@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import Footer from "../Footer";
 import "../style.css";
+import { useNavigate } from "react-router-dom";
 import img14 from "../../imgs/img14.jpg";
 import img15 from "../../imgs/img15.jpg";
 import img16 from "../../imgs/img16.jpg";
 import img17 from "../../imgs/img17.jpg";
 
 const DormitoryRoom = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
-  const [guests, setGuests] = useState(1);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Booking Submitted! Name: ${name}`);
-  };
+        const [name, setName] = useState("");
+        const [email, setEmail] = useState("");
+        const [checkInDate, setCheckInDate] = useState("");
+        const [checkOutDate, setCheckOutDate] = useState("");
+        const [guests, setGuests] = useState(1);
+      
+        const navigate = useNavigate(); 
+      
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          alert(`Booking Submitted! Name: ${name}`);
+          navigate("/payment"); 
+        };
+  
 
   return (
     <div className="container-fluid p-0">

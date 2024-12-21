@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import Footer from "../Footer";
 import "../style.css";
+import { useNavigate } from "react-router-dom";
 import img10 from "../../imgs/img10.jpg";
 import img11 from "../../imgs/img11.jpg";
 import img12 from "../../imgs/img12.jpg";
 import img13 from "../../imgs/img13.jpg";
 
 const DeluxeRoom = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
-  const [guests, setGuests] = useState(1);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Booking Submitted! Name: ${name}`);
+          const [name, setName] = useState("");
+          const [email, setEmail] = useState("");
+          const [checkInDate, setCheckInDate] = useState("");
+          const [checkOutDate, setCheckOutDate] = useState("");
+          const [guests, setGuests] = useState(1);
+        
+          const navigate = useNavigate(); 
+        
+          const handleSubmit = (e) => {
+            e.preventDefault();
+            alert(`Booking Submitted! Name: ${name}`);
+            navigate("/payment"); 
   };
 
   return (

@@ -27,14 +27,14 @@ const contacts = [
     mssv: "2201700189",
     phone: "0901234569",
     description: "Responsible for testing and handling errors related to the project's database.",
-    GithubLink: "https://facebook.com/khoa.example",
+    GithubLink: "https://facebook.com/",
   },
 ];
 
 const ContactUs = () => {
   return (
     <div>
-      <div className="container py-5 text-white">
+      <div className="container py-5 text-black">
         <h1 className="text-center fw-bold mb-4">Contact Us</h1>
         <p className="text-center fs-5 mb-5">{groupIntro}</p>
 

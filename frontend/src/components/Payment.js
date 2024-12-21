@@ -9,10 +9,7 @@ const Payment = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Simulate payment process
     setPaymentSuccessful(true);
-
-    // Redirect to home after 3 seconds
     setTimeout(() => {
       navigate('/');
     }, 3000);

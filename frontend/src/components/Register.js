@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Added useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import img2 from '../imgs/img2.jpg';
 import './style.css';
 import Footer from './Footer';
@@ -12,7 +12,7 @@ const Register = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -42,7 +42,7 @@ const Register = () => {
     const formErrors = validate();
     if (Object.keys(formErrors).length === 0) {
       alert('Registration successful!');
-      navigate('/log-in'); // Redirect to the login page
+      navigate('/log-in');
     } else {
       setErrors(formErrors);
     }

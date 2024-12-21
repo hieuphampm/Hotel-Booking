@@ -35,7 +35,6 @@ const LogIn = ({ onLogin }) => {
 
     setLoading(true);
 
-    // Simulate login process
     setTimeout(() => {
       setLoading(false);
       if (email === 'admin@admin.com' && password === '1234') {

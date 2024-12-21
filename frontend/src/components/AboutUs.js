@@ -52,7 +52,7 @@ const AboutUs = () => {
           </p>
           <ul>
             <li>Welcoming over <strong>50,000 guests</strong> since our grand opening.</li>
-            <li>Receiving the <strong>"Top Luxury Retreat Award"</strong> in 2023.</li>
+            <li>Receiving the <strong>"Top Luxury Retreat Award"</strong> in 2024.</li>
             <li>Expanding to <strong>three breathtaking locations</strong> across the country.</li>
           </ul>
         </div>

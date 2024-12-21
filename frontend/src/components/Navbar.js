@@ -45,4 +45,3 @@ const Navbar = ({ isLoggedIn }) => {
 };
 
 export default Navbar;
-
